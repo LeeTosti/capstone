@@ -15,7 +15,7 @@ end = today - datetime.timedelta(days=1)
 
 
 user_date = st.date_input(
-    label='Select your date:', 
+    label='**Select your date:**', 
     value=None,
     max_value=end,
     format='YYYY-MM-DD'
