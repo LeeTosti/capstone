@@ -25,6 +25,4 @@ st.write("""
          The API key allows you to access NASA's open API and brings the data that you want to your searches. 
          A lot of the apps you use utilize API keys. For example, your weather app on your phone might link 
          to the National Weather Service's API.
-         Also, using your own key allows you to make your own requests without worrying about how many other people
-         are utilizing this application and if it will crash.
          """)
