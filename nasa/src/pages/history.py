@@ -5,8 +5,8 @@ import requests
 import json
 
 st.header('History of Near Earth Objects')
-st.subheader('Enter API Key and selected date range:')
-api_key = st.text_input('API Key:', value=None, max_chars=45)
+st.subheader('**Enter API Key and selected date**')
+api_key = st.text_input('**API Key:**', value=None, max_chars=45)
 
 today = datetime.datetime.now()
 last_year = today.day - 1
