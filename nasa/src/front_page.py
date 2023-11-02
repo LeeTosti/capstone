@@ -12,7 +12,7 @@ st.write('''
         **This application utilizes Pandas, Streamlit, Seaborn and Python to intake a date 
         and user API key for a day\'s worth of data on Near Earth Objects.**
         ''')
-st.write('Please note that this application only allows searches for the last calendar year.')
+
 
 
 st.header('Getting Started')
@@ -22,7 +22,7 @@ st.write('''
          Please use the button below to go to NASA\'s website to register for a key.''')
 st.link_button('Get NASA API Key', 'https://api.nasa.gov/', help='This button will take you to NASA\'s website.')
 st.write("""
-         Below are examples of what can be done on the history and visualizations pages.
+         Below are examples of results that are rendered from the history and visualizations pages.
          """)
 
 load_dotenv()

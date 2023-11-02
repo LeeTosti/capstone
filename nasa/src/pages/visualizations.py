@@ -50,7 +50,7 @@ if user_date:
     df['Potentially Hazardous Asteroids'] = df['Potentially Hazardous Asteroids'].replace({True: 'True', False: 'False'})
 
 
-    visualization_type = ['select', 'histogram', 'scatterplot']
+    visualization_type = ['select', 'histogram', 'scatterplot', 'boxplot']
     visualization = st.selectbox('Choose your visualization type:', options=visualization_type)
 
     if visualization == 'histogram':
@@ -58,7 +58,7 @@ if user_date:
         if x in list(df.columns[:4]):
             try:
                 plot = sns.histplot(data=df, x=x)
-                month_date_str = user_date.strftime('%B %m, %Y')
+                month_date_str = user_date.strftime('%B %d, %Y')
                 st.subheader(f'{x} of Near Earth Objects on {month_date_str}')
                 st.pyplot(plot.get_figure())
             except BaseException:
@@ -66,10 +66,8 @@ if user_date:
         if x in list(df.columns[4:]):
             try:  
                 plot = sns.histplot(data=df, x=x, discrete=True)
-                #plt.yticks([0, 5, 10, 15, 20, 25])
-                #custom_yticks = df[x].value_counts().values[0]
                 plot.set(yticks=range(0, int(max(plot.get_yticks()))+5, 5))
-                month_date_str = user_date.strftime('%B %m, %Y')
+                month_date_str = user_date.strftime('%B %d, %Y')
                 st.subheader(f'{x} on {month_date_str}')
                 st.pyplot(plot.get_figure())
             except BaseException:
@@ -89,3 +87,12 @@ if user_date:
                 st.pyplot(plot.get_figure())
             except BaseException:
                 st.error('Unable to visualize using selected values. Please select different values.')
+
+    if visualization == 'boxplot':
+        x = st.selectbox('Select an X-axis value:', options=list(df.columns[:4]))
+        if x:
+            try:
+                plot = sns.boxplot(data=df, x=x)
+                st.pyplot(plot.get_figure())
+            except BaseException:
+                st.error('Unable to visualize using X-axis value. Please select another option.')
