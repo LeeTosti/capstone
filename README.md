@@ -1,4 +1,5 @@
 ## NASA Capstone Application
+#### This application was built as one of the capstones for the Data Analytics bootcamp with Coding Temple.
 
 ### Overview:
 
@@ -22,4 +23,3 @@ of visualization as well as what to display on the axes.
 
 This application was built using Ptyhon and utilizes the following libraries: pandas, matplotlib, seaboarn, streamlit, datetime, requests, os, and json.
 
-#### This application was built as one of the capstones for the Data Analytics bootcamp with Coding Temple.
