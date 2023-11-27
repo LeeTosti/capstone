@@ -20,8 +20,3 @@ st.write("""
          It means that the asteroid has an orbit that comes nearer than 7.5 million kilometers to the earth
          and it's absolute magnitude implies a size of more than 100 meters in diameter.
          """)
-st.subheader('Why do I need an API key?')
-st.write("""
-         The API key allows you to access NASA's open API through authentification. Once you are authenticated by
-         the system, you can run searches that will return the data you requested.
-         """)

@@ -3,11 +3,15 @@ import streamlit as st
 import datetime
 import requests
 import json
+from dotenv import load_dotenv
+from os import getenv
 
 st.header('History of Near Earth Objects')
-st.subheader('**Enter API Key and selected date**')
+
+#st.subheader('**Enter API Key and selected date**')
 #intake user API key input
-api_key = st.text_input('**API Key:**', value=None, max_chars=45)
+#api_key = st.text_input('**API Key:**', value=None, max_chars=45)
+
 
 #create datetime variables for the date input calendar
 today = datetime.datetime.now()
@@ -25,6 +29,8 @@ user_date = st.date_input(
 #if statement to trigger next steps if user inputs a date
 if user_date:
     #set the user input date to a new variable
+    load_dotenv()
+    api_key = getenv('MY_API_KEY')
     date = user_date
     #transform date variable into a date string
     date_str = date.strftime('%Y-%m-%d')

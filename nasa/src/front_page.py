@@ -10,19 +10,23 @@ import seaborn as sns
 st.title('NASA Near Earth Objects Application')
 st.write('''
         **This application utilizes Pandas, Streamlit, Seaborn and Python to intake a date 
-        and user API key for a day\'s worth of data on Near Earth Objects.**
+        for a day\'s worth of data on Near Earth Objects.**
         ''')
 
 
 
 st.header('Getting Started')
 st.write('''
-         In order to utilize this application, you will need an API key from NASA. 
-         NASA\'s has an open API and keys are free and available to the public. 
-         Please use the button below to go to NASA\'s website to register for a key.''')
-st.link_button('Get NASA API Key', 'https://api.nasa.gov/', help='This button will take you to NASA\'s website.')
+         The National Aeronautics and Space Administration (NASA)'s mission statement is to drive advances
+         in science, technology, aeronautics, and space exploration to enchance knowledge, education,
+         innovation, and economic vitality, and stewardship of Earth.
+         This application will allow you to take a closer look at a small portion of NASA's work by
+         showcasing Near Earth Objects, also known as NEOs. To learn more about Near Earth Objects, 
+         please check out our FAQ page. You can also click on the link below to visit NASA's Near Earth
+         Objects page to learn more.''')
+st.link_button('NASA Near Earth Objects page', 'https://cneos.jpl.nasa.gov/', help='This button will take you to NASA\'s website.')
 st.write("""
-         Below are examples of results that are rendered from the history and visualizations pages.
+         Below are examples of the results that can be rendered on the history and visualizations pages.
          """)
 
 load_dotenv()

@@ -5,11 +5,13 @@ import pandas as pd
 import datetime
 import requests
 import json
+from dotenv import load_dotenv
+from os import getenv
 
 
 st.subheader('Create your own visualizations based on your selected date')
-st.write('**Enter API Key and selected date**')
-api_key = st.text_input('**API Key:**', value=None, max_chars=45)
+#st.write('**Enter API Key and selected date**')
+#api_key = st.text_input('**API Key:**', value=None, max_chars=45)
 
 today = datetime.datetime.now()
 last_year = today.day - 1
@@ -27,6 +29,8 @@ user_date = st.date_input(
 
 if user_date:
     date_str = user_date.strftime('%Y-%m-%d')
+    load_dotenv()
+    api_key = getenv('MY_API_KEY')
     api_url = f'https://api.nasa.gov/neo/rest/v1/feed?start_date={date_str}&end_date={date_str}&api_key={api_key}'
     neows = requests.get(api_url)
 
